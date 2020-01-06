@@ -17,7 +17,7 @@ class App extends Component{
     .then(results => results.json())
     .then(data => {
       console.log('this is data', data)
-      let dataArr = data.name
+      let dataArr = data[0].name
       this.setState({dataArr})
     })
       
@@ -28,6 +28,9 @@ class App extends Component{
     return(
         <div>
         <h1>testing</h1>
+        <h1>{this.state.dataArr}</h1>
+
+        
         </div>
     )
   }
