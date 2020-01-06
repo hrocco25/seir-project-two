@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Boulder extends Component{
+class Castle extends Component{
     constructor() {
         super()
         this.state = {
@@ -10,7 +10,7 @@ class Boulder extends Component{
     }
  
   componentDidMount(){
-    fetch("https://api.openbrewerydb.org/breweries?by_city=boulder")
+    fetch("https://api.openbrewerydb.org/breweries?by_city=castle_rock")
     .then(results => results.json())
     .then(data => {
       console.log('this is data', data)
@@ -48,4 +48,4 @@ class Boulder extends Component{
   
   
   
-  export default Boulder;
+  export default Castle;

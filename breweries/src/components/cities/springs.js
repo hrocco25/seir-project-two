@@ -10,7 +10,7 @@ class Denver extends Component{
     }
  
   componentDidMount(){
-    // let city = "denver"
+  
     fetch("https://api.openbrewerydb.org/breweries?by_city=colorado_springs")
     .then(results => results.json())
     .then(data => {
@@ -28,7 +28,7 @@ class Denver extends Component{
 
         )
       })
-      // let dataArr = data[1].name
+      
       this.setState({dataArr})
     })
       

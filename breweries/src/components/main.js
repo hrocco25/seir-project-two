@@ -1,22 +1,12 @@
-import React, { Component } from 'react';
-import {Link, Route, Switch} from 'react-router-dom'
-// import cities from './data.json'
+import React from 'react';
+import {Link} from 'react-router-dom'
 
-function Main(props) {
 
-    // let sidebar = {cities}.map(item => {
-    //     return(
-    //         <div  key={item.title}>
-    //             <Link to={'/show/' + item.cities}>
-    //                 {item.title}
-    //             </Link>
-    //         </div>
-    //     )
-    //   })
+function Main() {
 
     return (
-        <>
-            <Link to='/Denver'>
+     <div>
+         <Link to='/Denver'>
                 <h1>Denver</h1>
             </Link>
             <Link to='/springs'>
@@ -28,7 +18,13 @@ function Main(props) {
             <Link to='/arvada'>
                 <h1>Arvada</h1>
             </Link>
-        </>
+            <Link to='/castle'>
+                <h1>Castle Rock</h1>
+            </Link>
+           
+        
+     </div>
+            
     )
 }
 export default Main

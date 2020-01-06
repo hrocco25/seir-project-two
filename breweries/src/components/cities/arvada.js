@@ -39,6 +39,7 @@ class Arvada extends Component{
        
       return(
           <div>
+            <h1>Arvada Breweries</h1>
             {this.state.dataArr}
           
           </div>
