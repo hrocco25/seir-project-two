@@ -21,7 +21,10 @@ class App extends Component{
               <Header />
             </Link>
             
+            
           </nav>
+
+          {/* <Castle /> */}
           
           <main>
             <Route exact path='/' render={props=> <Main {...props} />}/>
