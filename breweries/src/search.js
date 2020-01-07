@@ -10,53 +10,28 @@ class Search extends Component {
             query: '',
             results: {},
         }
-
-        this.cancel= ''
     }
 
     fetchSearchResults = ( query ) => {
         const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}`
-
-        if (this.cancel ) {
-            this.cancel.cancel()
-        }
-
-        this.cancel =axios.CancelToken.source()
-
-        axios.get( searchUrl, {
-            cancelToken: this.cancel.token
-        } )
+        axios.get( searchUrl)
             .then( res => {
                 console.log(res)
                 this.setState( {
                     results: res.data,
-                    loading: false
                 })
             })
-            .catch( error => {
-                if( axios.isCancel(error) || error){
-                    this.setState( {
-                        loading: false,
-                    })
-                }
-            })
-
     }
-
-
 
     handleOnInputChange = (e) => {
         const query = e.target.value
         if ( ! query ){
             this.setState( { query, results: {}} )
         } else{
-          this.setState ( { query : query }, () =>{
+          this.setState ( { query }, () =>{
             this.fetchSearchResults( query )
-        } )
-          
+        } ) 
         }
-        console.log(query)
-
     }
 
     renderSearchResults = () => {
@@ -94,9 +69,6 @@ class Search extends Component {
                         placeholder='Search for city..'
                         onChange={this.handleOnInputChange}
                     />
-                    
-                  
-                    
                 </label>
                 <Results />
                 {this.renderSearchResults()}
