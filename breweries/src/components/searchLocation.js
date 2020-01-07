@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Results from './components/results'
 
-class Search extends Component {
+
+class SearchLocation extends Component {
 
     constructor( props ){
         super( props )
@@ -16,7 +16,7 @@ class Search extends Component {
         const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}`
         axios.get( searchUrl)
             .then( res => {
-                console.log(res)
+                // console.log(res)
                 this.setState( {
                     results: res.data,
                 })
@@ -57,7 +57,7 @@ class Search extends Component {
     render(){
 
         const { query } = this.state
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
@@ -70,11 +70,11 @@ class Search extends Component {
                         onChange={this.handleOnInputChange}
                     />
                 </label>
-                <Results />
+                
                 {this.renderSearchResults()}
             </div>
         )
     }
 }
 
-export default Search
+export default SearchLocation

@@ -1,10 +1,11 @@
 import React from 'react';
-
+import Image from './image'
 function Header(props) {
 
     return (
         <>
-            Find a Brewery in your city
+            <h1>Find a Brewery near you!</h1>
+            <Image />
             
         </>
     )

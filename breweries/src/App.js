@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import {Link, Route} from 'react-router-dom'
 import Header from './components/header'
-import Search from './search'
+import SearchLocation from './components/searchLocation'
+import Footer from './components/footer'
 
 
-class App extends Component{
 
-  render(){
-     
-    return(
+function App(){
+  return(
         <div>
-          <nav>
-            
-              <Header />
-            
-           
-          </nav>
-
-          <Search />
+          <Header />
+          <SearchLocation />
+          <Footer />
           
-          
-
-        
         </div>
     )
-  }
+
 }
+
 
 
 
