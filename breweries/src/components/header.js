@@ -4,7 +4,7 @@ function Header(props) {
 
     return (
         <>
-            Breweries on the front-range
+            Find a Brewery in your city
             
         </>
     )

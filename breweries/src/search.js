@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Results from './components/results'
 
 class Search extends Component {
 
@@ -8,15 +9,13 @@ class Search extends Component {
         this.state= {
             query: '',
             results: {},
-            loading: false,
-            message: '',
         }
 
         this.cancel= ''
     }
 
     fetchSearchResults = ( query ) => {
-        const searchUrl= `https://api.openbrewerydb.org/breweries/search?query=${query}`
+        const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}`
 
         if (this.cancel ) {
             this.cancel.cancel()
@@ -28,11 +27,9 @@ class Search extends Component {
             cancelToken: this.cancel.token
         } )
             .then( res => {
-                const resultNotFoundMsg = "There are no results"
                 console.log(res)
                 this.setState( {
                     results: res.data,
-                    message: resultNotFoundMsg,
                     loading: false
                 })
             })
@@ -40,7 +37,6 @@ class Search extends Component {
                 if( axios.isCancel(error) || error){
                     this.setState( {
                         loading: false,
-                        message: 'Failed to fetch the data, please check the network'
                     })
                 }
             })
@@ -50,11 +46,15 @@ class Search extends Component {
 
 
     handleOnInputChange = (e) => {
-        // e.preventDefault()
         const query = e.target.value
-        this.setState ( { query : query , loading: true, message: "" }, () =>{
+        if ( ! query ){
+            this.setState( { query, results: {}} )
+        } else{
+          this.setState ( { query : query }, () =>{
             this.fetchSearchResults( query )
         } )
+          
+        }
         console.log(query)
 
     }
@@ -67,7 +67,7 @@ class Search extends Component {
                     {results.map( result => {
                         return(
                             <div key= { result.id } className="result-item">
-                                <a className='name' href= { result.website_url }>{result.name}</a>
+                                <a className='name' href= { result.website_url } target="_blank">{result.name}</a>
                                 <p>{result.street} {result.city}, {result.state}</p>
                                 <p>{result.phone}</p>
                                 <p></p>
@@ -85,18 +85,20 @@ class Search extends Component {
         console.log(this.state)
         return (
             <div className="container">
-                <h2 className="heading">Live Search: React Application</h2>
                 <label className="search-label" htmlFor="search-input">
                     <input 
                         type="text"
                         name= "query"
                         value= {query}
                         id="search-input"
-                        placeholder='Search..'
+                        placeholder='Search for city..'
                         onChange={this.handleOnInputChange}
                     />
                     
+                  
+                    
                 </label>
+                <Results />
                 {this.renderSearchResults()}
             </div>
         )
