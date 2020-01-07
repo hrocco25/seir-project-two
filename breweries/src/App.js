@@ -9,6 +9,7 @@ import Springs from './components/cities/springs'
 import Boulder from './components/cities/boulder'
 import Arvada from './components/cities/arvada'
 import Castle from './components/cities/castle'
+import Search from './search'
 
 
 class App extends Component{
@@ -21,14 +22,14 @@ class App extends Component{
             <Link to='/'>
               <Header />
             </Link>
-            
-            
+           
           </nav>
+          <Form />
 
-          {/* <Castle /> */}
+          <Search />
           
           <main>
-            <Form />
+            {/* <Form /> */}
             <Route exact path='/' render={props=> <Main {...props} />}/>
             <Route path='/Boulder' render={props=> <Boulder {...props} />}/>
             <Route path='/Denver' render={props=> <Denver {...props} />}/>
