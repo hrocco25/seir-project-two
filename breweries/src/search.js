@@ -66,9 +66,11 @@ class Search extends Component {
                 <div className='results-container'>
                     {results.map( result => {
                         return(
-                            <div key= { result.id } href= { result.website_url } className="result-item">
-                                <h1 className='name'>{result.name}</h1>
-                                {/* <p>{result.brewery_type}</p> */}
+                            <div key= { result.id } className="result-item">
+                                <a className='name' href= { result.website_url }>{result.name}</a>
+                                <p>{result.street} {result.city}, {result.state}</p>
+                                <p>{result.phone}</p>
+                                <p></p>
                             </div>
                         )
                     })}
