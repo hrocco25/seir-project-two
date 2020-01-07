@@ -1,52 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 
+function Arvada(){
+    const [brewery, setBrewery] = useState([])
+   
+    useEffect(() => {
+        axios.get("https://api.openbrewerydb.org/breweries?by_city=arvada")
+            .then(res =>{
+                console.log('test',res)
+                setBrewery(res.data)
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    }, [])
 
-class Arvada extends Component{
-    constructor() {
-        super()
-        this.state = {
-        dataArr: []
-        }
-    }
- 
-  componentDidMount(){
-    // let city = "denver"
-    fetch("https://api.openbrewerydb.org/breweries?by_city=arvada")
-    .then(results => results.json())
-    .then(data => {
-      console.log('this is data', data)
-      let dataArr = data.map(city => {
-        return(
-          <div key={city.name}>
-            <p>{city.name}</p>
-            <p>{city.brewery_type}</p>
-            <p>{city.street} {city.city} {city.state}</p>
-            <p>{city.phone}</p>
-            <p>{city.website_url}</p>
-          </div>
+    return(
+        <div>
+            <div>
+                {brewery.map(brewery =>(
+                    <div key={brewery.name}>
+                       <p>{brewery.name}</p>
+                        <p>{brewery.brewery_type}</p> 
+                        <p>{brewery.street} {brewery.city} {brewery.state}</p>
+                        <p>{brewery.phone}</p>
+                        <p>{brewery.website_url}</p>
+                    </div>                    
+                ))}
+            </div>
+        </div>
+    )
+}
 
-
-        )
-      })
-      // let dataArr = data[1].name
-      this.setState({dataArr})
-    })
-      
-    
-  }
-
-    render(){
-       
-      return(
-          <div>
-            <h1>Arvada Breweries</h1>
-            {this.state.dataArr}
-          
-          </div>
-      )
-    }
-  }
-  
-  
-  
-  export default Arvada;
+export default Arvada

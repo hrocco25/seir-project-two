@@ -1,51 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 
-
-class Boulder extends Component{
-    constructor() {
-        super()
-        this.state = {
-        dataArr: []
-        }
-    }
- 
-  componentDidMount(){
-    fetch("https://api.openbrewerydb.org/breweries?by_city=boulder")
-    .then(results => results.json())
-    .then(data => {
-      console.log('this is data', data)
-      let dataArr = data.map(city => {
-        return(
-          <div key={city.name}>
-            <p>{city.name}</p>
-            <p>{city.brewery_type}</p>
-            <p>{city.street} {city.city} {city.state}</p>
-            <p>{city.phone}</p>
-            <p>{city.website_url}</p>
-          </div>
-
-
-        )
-      })
+function Boulder(){
+    const [brewery, setBrewery] = useState([])
    
-      this.setState({dataArr})
-    })
-      
-    
-  }
+    useEffect(() => {
+        axios.get("https://api.openbrewerydb.org/breweries?by_city=boulder")
+            .then(res =>{
+                console.log('test',res)
+                setBrewery(res.data)
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+    }, [])
 
-    render(){
-       
-      return(
-          <div>
-            Boulder Breweries
-            {this.state.dataArr}
-          
-          </div>
-      )
-    }
-  }
-  
-  
-  
-  export default Boulder;
+    return(
+        <div>
+            <div>
+                {brewery.map(brewery =>(
+                    <div key={brewery.name}>
+                       <p>{brewery.name}</p>
+                        <p>{brewery.brewery_type}</p> 
+                        <p>{brewery.street} {brewery.city} {brewery.state}</p>
+                        <p>{brewery.phone}</p>
+                        <p>{brewery.website_url}</p>
+                    </div>                    
+                ))}
+            </div>
+        </div>
+    )
+}
+
+export default Boulder
