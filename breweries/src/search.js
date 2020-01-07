@@ -16,7 +16,7 @@ class Search extends Component {
     }
 
     fetchSearchResults = ( query ) => {
-        const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}`
+        const searchUrl= `https://api.openbrewerydb.org/breweries/search?query=${query}`
 
         if (this.cancel ) {
             this.cancel.cancel()
@@ -28,8 +28,13 @@ class Search extends Component {
             cancelToken: this.cancel.token
         } )
             .then( res => {
-                // const resultNotFoundMessage = ! res.data.hits.length
+                const resultNotFoundMsg = "There are no results"
                 console.log(res)
+                this.setState( {
+                    results: res.data,
+                    message: resultNotFoundMsg,
+                    loading: false
+                })
             })
             .catch( error => {
                 if( axios.isCancel(error) || error){
@@ -42,6 +47,8 @@ class Search extends Component {
 
     }
 
+
+
     handleOnInputChange = (e) => {
         // e.preventDefault()
         const query = e.target.value
@@ -50,6 +57,24 @@ class Search extends Component {
         } )
         console.log(query)
 
+    }
+
+    renderSearchResults = () => {
+        const { results } = this.state
+        if ( Object.keys (results).length && results.length){
+            return(
+                <div className='results-container'>
+                    {results.map( result => {
+                        return(
+                            <div key= { result.id } href= { result.website_url } className="result-item">
+                                <h1 className='name'>{result.name}</h1>
+                                {/* <p>{result.brewery_type}</p> */}
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
     }
 
     render(){
@@ -70,6 +95,7 @@ class Search extends Component {
                     />
                     
                 </label>
+                {this.renderSearchResults()}
             </div>
         )
     }

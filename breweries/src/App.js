@@ -24,19 +24,19 @@ class App extends Component{
             </Link>
            
           </nav>
-          <Form />
+          {/* <Form /> */}
 
           <Search />
           
-          <main>
-            {/* <Form /> */}
+          {/* <main> */}
+            {/* <Form />
             <Route exact path='/' render={props=> <Main {...props} />}/>
             <Route path='/Boulder' render={props=> <Boulder {...props} />}/>
             <Route path='/Denver' render={props=> <Denver {...props} />}/>
             <Route path='/Springs' render={props=> <Springs {...props} />}/>
             <Route path='/Arvada' render={props=> <Arvada {...props} />}/>
             <Route path='/Castle' render={props=> <Castle {...props} />}/>
-          </main>
+          </main> */}
 
         
         </div>
