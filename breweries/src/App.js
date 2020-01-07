@@ -3,6 +3,7 @@ import './App.css';
 import {Link, Route} from 'react-router-dom'
 import Main from "./components/main"
 import Header from './components/header'
+import Form from './components/form'
 import Denver from './components/cities/denver'
 import Springs from './components/cities/springs'
 import Boulder from './components/cities/boulder'
@@ -27,6 +28,7 @@ class App extends Component{
           {/* <Castle /> */}
           
           <main>
+            <Form />
             <Route exact path='/' render={props=> <Main {...props} />}/>
             <Route path='/Boulder' render={props=> <Boulder {...props} />}/>
             <Route path='/Denver' render={props=> <Denver {...props} />}/>
