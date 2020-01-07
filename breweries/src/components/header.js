@@ -4,7 +4,7 @@ function Header(props) {
 
     return (
         <>
-            <h1>Find a Brewery near you!</h1>
+            <h1>Breweries</h1>
             <Image />
             
         </>
