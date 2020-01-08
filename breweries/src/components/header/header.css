@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 5%;
+
+}
+
+.beerIcon{
+    width: 10%;
+}
+
+
+
+.mainImg{
+    width: 100%;
+    border: black solid .2em;
+}

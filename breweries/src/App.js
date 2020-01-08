@@ -1,18 +1,18 @@
 import React from 'react';
-import{Link, Route, Switch } from 'react-router-dom'
+import{Link, Route } from 'react-router-dom'
 import './App.css';
-import Header from './components/header'
-import Footer from './components/footer'
-import Main from './components/main'
-import Location from './components/location'
-import Name from './components/name'
+import Header from './components/header/header'
+import Footer from './components/footer/footer'
+import Main from './components/main/main'
+import Location from './components/search/location'
+import Name from './components/search/name'
 
 
 
 function App(){
   return(
         <div>
-          <Link to ='/'>
+          <Link to ='/' style={{textDecoration: 'none', color: 'black'}}>
             <Header /> 
           </Link>
           

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './search.css';
 
 
 class SearchName extends Component {
@@ -62,6 +63,7 @@ class SearchName extends Component {
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
                     <input 
+                        className='search-input'
                         type="text"
                         name= "query"
                         value= {query}

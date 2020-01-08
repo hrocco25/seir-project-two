@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './search.css';
 
 
 class SearchLocation extends Component {
@@ -41,7 +42,7 @@ class SearchLocation extends Component {
                 <div className='results-container'>
                     {results.map( result => {
                         return(
-                            <div key= { result.id } className="result-item">
+                            <div key= { result.id } className="result-item" style={{border: "black solid .1em"}}>
                                 <a className='name' href= { result.website_url } target="_blank">{result.name}</a>
                                 <p>{result.street} {result.city}, {result.state}</p>
                                 <p>{result.phone}</p>
@@ -62,13 +63,16 @@ class SearchLocation extends Component {
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
                     <input 
+                        className='search-input'
                         type="text"
                         name= "query"
                         value= {query}
                         id="search-input"
                         placeholder='Search for city..'
                         onChange={this.handleOnInputChange}
+                        
                     />
+                    
                 </label>
                 
                 {this.renderSearchResults()}

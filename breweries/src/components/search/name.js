@@ -1,12 +1,13 @@
 import React from 'react';
 import SearchName from './searchName';
-
+import './search.css'
 
 function Name(){
    
 
     return(
-        <div>
+        <div className="search">
+            <h1>Search by Name of brewery</h1>
             <SearchName />
         </div>
     )
