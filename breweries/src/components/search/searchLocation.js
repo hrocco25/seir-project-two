@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatPhoneNumber } from 'react-phone-number-input';
 import axios from 'axios'
 import './search.css';
 
@@ -13,8 +14,8 @@ class SearchLocation extends Component {
         }
     }
 
-    fetchSearchResults = ( query ) => {
-        const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}`
+    fetchSearchResults = ( query, query2 ) => {
+        const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}&&per_page=50`
         axios.get( searchUrl)
             .then( res => {
                 // console.log(res)
@@ -41,12 +42,16 @@ class SearchLocation extends Component {
             return(
                 <div className='results-container'>
                     {results.map( result => {
+                        let mod = `+1` + result.phone
                         return(
                             <div key= { result.id } className="result-item" style={{border: "black solid .1em"}}>
                                 <a className='name' href= { result.website_url } target="_blank">{result.name}</a>
                                 <p>{result.street} {result.city}, {result.state}</p>
-                                <p>{result.phone}</p>
-                                <p></p>
+
+                        {/* <NumberFormat customInput= {result.phone} format= "(###) ###-###"/> */}
+                            
+                        
+                                <p>{formatPhoneNumber(`${mod}`)}</p>
                             </div>
                         )
                     })}
@@ -56,6 +61,7 @@ class SearchLocation extends Component {
     }
 
     render(){
+        console.log(formatPhoneNumber("12133734253"))
 
         const { query } = this.state
         // console.log(this.state)

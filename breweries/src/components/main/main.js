@@ -11,7 +11,7 @@ function Main(){
             <div className='main'>
                 <div className='mainLinks'>
                     <Link to='/location' style={{textDecoration: 'none', color:'black'}}>
-                        <h2>Location</h2>
+                        <h2>City</h2>
                     </Link>
                 </div>
                 <div className='mainLinks'>

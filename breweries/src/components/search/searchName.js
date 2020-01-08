@@ -14,7 +14,7 @@ class SearchName extends Component {
     }
 
     fetchSearchResults = ( query ) => {
-        const searchUrl= `https://api.openbrewerydb.org/breweries?by_name=${query}`
+        const searchUrl= `https://api.openbrewerydb.org/breweries?by_name=${query}&&per_page=50`
         axios.get( searchUrl)
             .then( res => {
                 // console.log(res)
