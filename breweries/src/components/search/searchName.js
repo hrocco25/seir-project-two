@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { formatPhoneNumber } from 'react-phone-number-input';
 import axios from 'axios'
 import './search.css';
 
@@ -41,12 +42,12 @@ class SearchName extends Component {
             return(
                 <div className='results-container'>
                     {results.map( result => {
+                        let phone = `+1` + result.phone
                         return(
                             <div key= { result.id } className="result-item">
                                 <a className='name' href= { result.website_url } target="_blank">{result.name}</a>
                                 <p>{result.street} {result.city}, {result.state}</p>
-                                <p>{result.phone}</p>
-                                <p></p>
+                                <p>{formatPhoneNumber(`${phone}`)}</p>
                             </div>
                         )
                     })}

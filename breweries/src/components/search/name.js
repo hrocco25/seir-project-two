@@ -7,7 +7,7 @@ function Name(){
 
     return(
         <div className="search">
-            <h1>Search by Name of brewery</h1>
+            <h1>Search by name of brewery:</h1>
             <SearchName />
         </div>
     )

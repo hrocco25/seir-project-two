@@ -7,7 +7,7 @@ function Location(){
 
     return(
         <div className='search'>
-            <h1>Search by location of brewery</h1>
+            <h1>Search by location of brewery:</h1>
             <SearchLocation />
         </div>
     )

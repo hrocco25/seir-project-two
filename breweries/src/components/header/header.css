@@ -1,8 +1,12 @@
 .header{
     display: flex;
     justify-content: space-between;
-    margin: 0% 5%;
+    padding: 2% 5% 0 5%;
+    font-family:'Roboto Slab', serif;
+}
 
+.header:hover{
+    color: #9E975E;
 }
 
 .beerIcon{

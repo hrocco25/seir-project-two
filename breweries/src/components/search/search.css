@@ -1,11 +1,15 @@
 .search{
     text-align: center;
+    font-size: .7em;
+
 }
 
 .search-input{
     font-size: 1.5em;
+    font-style: italic;
     border: #937D73 solid .1em;
     margin: 5%;
+    padding: 3%;
 }
 
 .results-container{
@@ -21,4 +25,9 @@
     text-align: center;
     /* min-width: 200px; */
     box-shadow: 2px 2px 2px #898989;
+    font-size: 1.2em;
+}
+
+.result-item a{
+    font-size: 1.4em;
 }

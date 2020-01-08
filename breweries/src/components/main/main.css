@@ -1,5 +1,6 @@
 .main{
     text-align: center;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .mainLinks{
@@ -7,4 +8,8 @@
     border-radius: 3%;
     text-align: center;
     margin: 1% 30%;
+}
+
+.mainLinks:hover{
+    background-color:  #9E975E;
 }
