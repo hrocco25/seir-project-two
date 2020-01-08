@@ -11,7 +11,7 @@ import Name from './components/search/name'
 
 function App(){
   return(
-        <div>
+        <div className='app'>
           <Link to ='/' style={{textDecoration: 'none', color: 'black'}}>
             <Header /> 
           </Link>

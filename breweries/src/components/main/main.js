@@ -6,8 +6,9 @@ function Main(){
    
     return(
         <div>
+            <h2 style={{textAlign: 'center'}}>Find the best breweries in your area!</h2>
             <h2 style={{textAlign: 'center'}}>Search by:</h2>
-            <div>
+            <div className='main'>
                 <div className='mainLinks'>
                     <Link to='/location' style={{textDecoration: 'none', color:'black'}}>
                         <h2>Location</h2>

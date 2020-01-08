@@ -3,7 +3,8 @@
 }
 
 .mainLinks{
-    border: black solid 2px;
-     text-align: center;
-     margin: 1% 30%;
+    border: #937D73 solid 2px;
+    border-radius: 3%;
+    text-align: center;
+    margin: 1% 30%;
 }

@@ -68,7 +68,7 @@ class SearchLocation extends Component {
                         name= "query"
                         value= {query}
                         id="search-input"
-                        placeholder='Search for city..'
+                        placeholder='Search for a city..'
                         onChange={this.handleOnInputChange}
                         
                     />
