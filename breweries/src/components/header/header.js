@@ -8,7 +8,7 @@ function Header(props) {
             <div className='header'>
                 <h1>Breweries</h1>
                 <img 
-                    className="beerIcon"
+                    className="beer-icon"
                     src="https://image.flaticon.com/icons/svg/1974/1974060.svg" 
                     alt="beer icon" 
                     >
@@ -16,7 +16,7 @@ function Header(props) {
             </div>
             <div className='img'>
                 <img 
-                    className='mainImg'
+                    className='main-img'
                     src="https://images.pexels.com/photos/159291/beer-machine-alcohol-brewery-159291.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" 
                     alt='brewery img'
                     >

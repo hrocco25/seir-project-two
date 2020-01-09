@@ -10,13 +10,13 @@
     color: #54646A;
 }
 
-.beerIcon{
+.beer-icon{
     width: 10%;
 }
 
 
 
-.mainImg{
+.main-img{
     width: 60%;
     opacity: .95;
     display: block;
@@ -27,7 +27,7 @@
 
 @media only screen and (min-width: 768px){
 
-    .mainImg{
+    .main-img{
         width: 40%;
         margin: 0 30% 0 30%;
         
@@ -44,7 +44,7 @@
 
 @media only screen and (min-width: 1200px){
 
-    .mainImg{
+    .main-img{
         width: 30%;
         margin: 0 35% 0 35%;
        
@@ -53,7 +53,7 @@
     .header h1{
         font-size: 2.5em;
     }
-    .beerIcon{
+    .beer-icon{
         width: 8%;
     }
 
