@@ -55,13 +55,12 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Planning | H | 3hrs| 1hrs | 3.5hrs |
 | Working with API | H | 2 hrs| 2hrs | hrs |
-| CSS and formating | H | 5hrs| hrs | hrs |
+| CSS and formating | H | 5hrs| 4hrs | hrs |
 | App | H | 1 hrs| hrs | hrs |
-| Header | H | 3 hrs| hrs | hrs |
-| Main | H | 4 hrs| hrs | hrs |
-| Search | H | 6 hrs| 2hrs | hrs |
-| Result| H | 6 hrs| hrs | hrs |
-| Footer | H | 1 hrs| hrs | hrs |
+| Header | H | 3 hrs| 1hrs | hrs |
+| Main | H | 4 hrs| 1hrs | hrs |
+| Search | H | 6 hrs| 6hrs | hrs |
+| Footer | H | 1 hrs| .2hrs | hrs |
 | Total | H | 31hrs| hrs | hrs |
 
 ## Additional Libraries

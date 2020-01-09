@@ -85,6 +85,7 @@ class SearchLocation extends Component {
                         onChange={this.handleOnInputChange}
                         
                     />
+                    {/* <button onClick={this.handleOnInputChange} value= {query}>Submit</button> */}
                     {/* <input 
                         className='search-input'
                         type="text"
