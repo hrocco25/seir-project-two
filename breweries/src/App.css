@@ -1,4 +1,13 @@
 .app{
-    background-color: #D0E9EE;
-    /* color: #6B663B; */
+    /* background-color: #D0E9EE; */
+    background-color:  rgb(80, 133, 80);
+    background-image: url("https://d39l2hkdp2esp1.cloudfront.net/img/photo/108949/108949_00_2x.jpg");
+    /* background-size: cover; */
+    
+}
+
+@media only screen and (min-width: 1200px){
+    .app{
+        padding: 0 20%;
+    }
 }

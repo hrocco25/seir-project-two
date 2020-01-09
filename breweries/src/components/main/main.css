@@ -1,15 +1,22 @@
 .main{
     text-align: center;
     font-family: 'PT Sans', sans-serif;
+    
+}
+
+.main h2{
+    font-family:'Roboto Slab', serif;
 }
 
 .mainLinks{
-    border: #937D73 solid 2px;
+    border: black solid .2em;
     border-radius: 3%;
     text-align: center;
     margin: 1% 30%;
+    
 }
 
 .mainLinks:hover{
-    background-color:  #9E975E;
+    background-color:  #54646A;
 }
+

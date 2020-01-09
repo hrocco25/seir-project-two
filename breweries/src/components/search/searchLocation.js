@@ -17,6 +17,7 @@ class SearchLocation extends Component {
 
     fetchSearchResults = ( query, query2 ) => {
         const searchUrl= `https://api.openbrewerydb.org/breweries?by_city=${query}&&per_page=100`
+        
         axios.get( searchUrl)
             .then( res => {
                 this.setState( {

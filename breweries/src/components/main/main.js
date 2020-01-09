@@ -8,7 +8,7 @@ function Main(){
         <div className='main' >
             <h2>Find the best breweries in your area!</h2>
             <h2>Search by:</h2>
-            <div>
+            <div className='links'>
                 <div className='mainLinks'>
                     <Link to='/location' style={{textDecoration: 'none', color:'black'}}>
                         <h2>City</h2>
