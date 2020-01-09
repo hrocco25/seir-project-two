@@ -19,9 +19,7 @@ function Main(){
                     <h2>Name</h2>
                     </Link>  
                 </div>
-                 
             </div>
-             
         </div>
     )
 }

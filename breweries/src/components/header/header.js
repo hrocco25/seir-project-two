@@ -12,7 +12,6 @@ function Header(props) {
                     src="https://image.flaticon.com/icons/svg/1974/1974060.svg" 
                     alt="beer icon" 
                     >
-
                 </img>
             </div>
             <div className='img'>

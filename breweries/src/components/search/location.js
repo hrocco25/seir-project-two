@@ -4,7 +4,6 @@ import './search.css'
 
 function Location(){
    
-
     return(
         <div className='search'>
             <h1>Search by location of brewery:</h1>

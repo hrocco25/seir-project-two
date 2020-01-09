@@ -37,17 +37,6 @@ class SearchLocation extends Component {
         }
     }
 
-    // handleOnInputChange2 = (e) => {
-    //     const query2 = e.target.value
-    //     if ( ! query2 ){
-    //         this.setState( { query2, results: {}} )
-    //     } else{
-    //       this.setState ( { query2 }, () =>{
-    //         this.fetchSearchResults( query2 )
-    //     } ) 
-    //     }
-    // }
-
     renderSearchResults = () => {
         const { results } = this.state
         if ( Object.keys (results).length && results.length){
@@ -69,9 +58,7 @@ class SearchLocation extends Component {
     }
 
     render(){
-        // const { query2 } =this.state
         const { query } = this.state
-        // console.log(this.state)
         return (
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
@@ -83,23 +70,8 @@ class SearchLocation extends Component {
                         id="search-input"
                         placeholder='Search by city...'
                         onChange={this.handleOnInputChange}
-                        
                     />
-                    {/* <button onClick={this.handleOnInputChange} value= {query}>Submit</button> */}
-                    {/* <input 
-                        className='search-input'
-                        type="text"
-                        name= "query2"
-                        value= {query2}
-                        id="search-input"
-                        placeholder='state..'
-                        onChange={this.handleOnInputChange2}
-                        
-                    /> */}
-                   
-                    
                 </label>
-                
                 {this.renderSearchResults()}
             </div>
         )

@@ -18,7 +18,6 @@ class SearchName extends Component {
         const searchUrl= `https://api.openbrewerydb.org/breweries?by_name=${query}&&per_page=50`
         axios.get( searchUrl)
             .then( res => {
-                // console.log(res)
                 this.setState( {
                     results: res.data,
                 })
@@ -59,7 +58,6 @@ class SearchName extends Component {
     render(){
 
         const { query } = this.state
-        // console.log(this.state)
         return (
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
@@ -73,7 +71,6 @@ class SearchName extends Component {
                         onChange={this.handleOnInputChange}
                     />
                 </label>
-                
                 {this.renderSearchResults()}
             </div>
         )
