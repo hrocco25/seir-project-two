@@ -57,7 +57,7 @@ class SearchLocation extends Component {
                         let phone = `+1` + result.phone
                         return(
                             <div key= { result.id } className="result-item" style={{border: "black solid .1em"}}>
-                                <a className='name' href= { result.website_url } target="_blank">{result.name}</a>
+                                <a className='name' href= { result.website_url } target="_blank" rel="noopener noreferrer">{result.name}</a>
                                 <p>{result.street} {result.city}, {result.state}</p>
                                 <p>{formatPhoneNumber(`${phone}`)}</p>
                             </div>
